@@ -1,0 +1,43 @@
+.powers-header {
+	
+}
+
+.heading {
+    width: 100%;
+    background-color: olive;
+    color: white;
+	font-weight: bold;
+}
+
+.ability-heading {
+	width: 100%;
+    background-color: tan;
+    color: black;
+}
+
+.powerfonts {
+	font-family: game_icons, Helvetica;
+}
+
+@font-face {
+	font-family: game_icons;
+	src: url('GameIcons.otf');
+}
+
+body {
+    font-family: Arial;
+}
+
+#output {
+	width: 300px;
+	border: black 1px solid;
+	display: block;
+	background-color: #E4D2BA;
+}
+
+#input {
+	width: 200px;
+	height: 200px;
+	display: block;
+}
+

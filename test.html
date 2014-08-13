@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta charset="UTF-8">
+		<title>Title of the document</title>
+		<script src='code.js'></script>
+		<script type='text/javascript'>
+			window.onload=function() {
+				var inputBox = document.getElementById("text");
+				var output = document.getElementById("output");
+
+				output.innerHTML = parseText(inputBox.value);
+
+				inputBox.onchange = function () {
+					output.innerHTML = parseText(inputBox.value);
+				};
+
+				inputBox.onkeyup = function () {
+					output.innerHTML = parseText(inputBox.value);
+				};
+			}
+		</script>
+	</head>
+		
+	<body>
+
+		<b>Input</b>
+
+<hr width="100%">
+<textarea rows="10" cols="80" id="text">--Standard Actions
+m Default Attack (weapon) * At-Will
+Attack: Melee 1 (one creature); +? vs. AC
+Hit: 1d6 + ? damage.
+--Help 
+Begin your powers with a "type code." Type codes are: 
+   M, R, C, X, O, m, r, and _
+In the example above, the type code is "m".
+  
+    </textarea>
+<br />
+<b>Output</b> 
+<hr width="100%">
+<div id="output"></div>
+	</body>
+</html>
