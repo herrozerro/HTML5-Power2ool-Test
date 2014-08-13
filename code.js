@@ -1,9 +1,7 @@
 	function parseText(inputData) {
 		// Succeptable to HTML injection... Sanitize input first in actual code...
 		// This is just a quick and dirty hack of a implementation. 
-		
-		
-		
+
 		//B character bolding
 		var str = inputData.replace(/(\n|^)B (.+?)\n/ig, "$1<b>$2</b>\n");
 		
@@ -15,13 +13,10 @@
 
 		//Replace '--' with section headers
 		str = str.replace(/(\n|^)--(.+?)\n/ig, "$1<div class='heading'>$2</div>");
-		
-		//Bold ':' Sections
-		str = str.replace(/(.*?:)/ig, "<b>$1</b>");
 
-		
-		
-		
+		//Bold ':' Sections
+		str = str.replace(/(\w*:)/igm, "<b>$1</b>");
+
 		// Replace linebreaks with <br />
 		str = str.replace(/\n/ig, "<br />");
 		return str;
