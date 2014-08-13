@@ -2,6 +2,8 @@
 		// Succeptable to HTML injection... Sanitize input first in actual code...
 		// This is just a quick and dirty hack of a implementation. 
 		
+		
+		
 		//B character bolding
 		var str = inputData.replace(/(\n|^)B (.+?)\n/ig, "$1<b>$2</b>\n");
 		
@@ -10,12 +12,12 @@
 		
 		//Replace 'm|M|r|R ' with power fonts
 		str = str.replace(/(\n|^)(_|m|r|a|c|d )(.+?)\n/ig, "$1<div class='ability-heading'><span class='powerfonts'>$2</span>$3</div>");
+
+		//Replace '--' with section headers
+		str = str.replace(/(\n|^)--(.+?)\n/ig, "$1<div class='heading'>$2</div>");
 		
 		//Bold ':' Sections
 		str = str.replace(/(.*?:)/ig, "<b>$1</b>");
-		
-		//Replace '--' with section headers
-		str = str.replace(/(\n|^)--(.+?)\n/ig, "$1<div class='heading'>$2</div>");
 
 		
 		
