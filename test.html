@@ -10,14 +10,14 @@
 				var inputBox = document.getElementById("text");
 				var output = document.getElementById("output");
 
-				output.innerHTML = parseText(inputBox.value);
+				output.innerHTML = parseinput(inputBox.value);
 
 				inputBox.onchange = function () {
-					output.innerHTML = parseText(inputBox.value);
+					output.innerHTML = parseinput(inputBox.value);
 				};
 
 				inputBox.onkeyup = function () {
-					output.innerHTML = parseText(inputBox.value);
+					output.innerHTML = parseinput(inputBox.value);
 				};
 			}
 		</script>

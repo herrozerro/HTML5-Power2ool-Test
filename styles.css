@@ -13,10 +13,23 @@
 	width: 100%;
     background-color: tan;
     color: black;
+	font-weight: bold;
+	font-size: .8em;
+}
+
+.powerbody {
+	padding-left: 20px;
+	text-indent: -10px;
+	font-size: .8em;
 }
 
 .powerfonts {
 	font-family: game_icons, Helvetica;
+	font-size: .7em;
+}
+
+.powerkeywords {
+	font-weight: normal;
 }
 
 @font-face {
