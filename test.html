@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<meta charset="UTF-8">
-		<title>Title of the document</title>
-		<script src='code.js'></script>
-		<script type='text/javascript'>
-			window.onload=function() {
-				var inputBox = document.getElementById("text");
-				var output = document.getElementById("output");
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta charset="UTF-8">
+	<title>Title of the document</title>
+	<script src='code.js'></script>
+	<script type='text/javascript'>
+	window.onload=function() {
+		var inputBox = document.getElementById("text");
+		var output = document.getElementById("output");
 
-				output.innerHTML = parseinput(inputBox.value);
+		output.innerHTML = parseinput(inputBox.value);
 
-				inputBox.onchange = function () {
-					output.innerHTML = parseinput(inputBox.value);
-				};
+		inputBox.onchange = function () {
+			output.innerHTML = parseinput(inputBox.value);
+		};
 
-				inputBox.onkeyup = function () {
-					output.innerHTML = parseinput(inputBox.value);
-				};
-			}
-		</script>
-	</head>
-		
-	<body>
+		inputBox.onkeyup = function () {
+			output.innerHTML = parseinput(inputBox.value);
+		};
+	}
+	</script>
+</head>
 
-		<b>Input</b>
+<body>
 
-<hr width="100%">
-<textarea rows="10" cols="80" id="text">--Standard Actions
+	<b>Input</b>
+
+	<hr width="100%">
+	<textarea rows="10" cols="80" id="text">
+--Standard Actions
 m Default Attack (weapon) * At-Will
 Attack: Melee 1 (one creature); +? vs. AC
 Hit: 1d6 + ? damage.
 --Help 
 Begin your powers with a "type code." Type codes are: 
-   M, R, A, C, m, r, and _
+M, R, A, C, m, r, and _
 In the example above, the type code is "m".
-  
-    </textarea>
-<br />
-<b>Output</b> 
-<hr width="100%">
+	</textarea>
+	<br />
+	<b>Output</b> 
+	<hr width="100%">
 
-<div class='entity creature'>
-	<div class='topinfo'>
-		<div class='name'>something</div>
-		<div class='leveltype'>Level 8 Controller</div>
-		<div class='keywords'>Large Natural Beastmode</div>
-		<div class='xp'>1000xp</div>
+	<div class='entity creature'>
+<!-- 		<div class='topinfo'>
+			<div class='name'>something</div>
+			<div class='leveltype'>Level 8 Controller</div>
+			<div class='keywords'>Large Natural Beastmode</div>
+			<div class='xp'>1000xp</div>
+		</div> -->
+		<div id="output"></div>
+
 	</div>
-	<div id="output"></div>
-
-</div>
 
 
-	</body>
+</body>
 </html>
