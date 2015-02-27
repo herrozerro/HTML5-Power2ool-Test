@@ -3,18 +3,20 @@
 }
 
 .heading {
-    width: 100%;
-    background-color: olive;
+    background-color: green;
     color: white;
-	font-weight: bold;
+    font-weight: bold;
+	padding: 4px;
+	margin-top: 4px;
 }
 
 .ability-heading {
-	width: 100%;
     background-color: tan;
     color: black;
 	font-weight: bold;
 	font-size: .8em;
+	padding: 4px;
+	margin-bottom:4px;
 }
 
 .powerbody {
@@ -52,33 +54,104 @@ body {
 	background-color: #E4D2BA;
 }
 
-.topinfo div {
-	border: black 1px solid;
+.topinfo {
+	background-color: darkgreen;
+	//border: black 1px solid;
+	overflow: hidden;
+	padding: 4px;
+	//height: 1em;
+}
+
+.topinfo div{
+	//border: black 1px solid;
+	font-weight: bold;
+	color: white;
+}
+
+.rightText{
+	text-align: right;
 }
 
 .creature .name {
 	float: left;
-	display: block;
+	width: 220px;
+	
 }
 
 .creature .leveltype {
 	float: right;
-	display: block;
+	width: 160px;
 }
 
 .creature .keywords {
 	float: left;
-	display: block;
+	width: 200px;
+	font-size: .9em;
 }
 
 .creature .xp {
 	float: right;
-	display: block;
+	width: 180px;
+	font-size: .9em;
 }
 
 #input {
-	width: 200px;
+	width: 400px;
 	height: 200px;
 	display: block;
 }
 
+.stats{
+	padding-top:4px;
+	padding-left: 2px;
+	font-size: .8em;
+}
+
+.leftStats{
+	width: 49%;
+	display: inline-block;
+}
+
+.rightStats{
+	width: 49%;
+	display: inline-block;
+	text-align: right;
+}
+
+
+.SkillsAttrs{
+	background-color: tan;
+    color: black;
+	padding-top: 4px;
+	padding-left: 2px;
+	font-size: .8em;
+}
+
+.equipment{
+	margin-top: 4px;
+	margin-right: 2px;
+}
+
+.Attributes div{
+	width: 30%;
+	display: inline-block;
+	padding-top: 4px;
+	padding-left: 2px;
+}
+
+.AlignEquipLanguage {
+	background-color: #E4D2BA;
+	padding-top: 4px;
+	padding-left: 2px;
+	font-size: .8em;
+}
+
+.halfSize{
+	display: inline-block;
+	width: 49%;
+}
+
+.description{
+	margin-top: 4px;
+	margin-right: 2px;
+}

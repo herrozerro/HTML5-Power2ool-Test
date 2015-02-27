@@ -1,4 +1,15 @@
+
+
+
+
+//Sanitize Input
+function sanitizeString(str){
+    str = str.replace(/[^a-z0-9αινσϊρό :\n\.,_-]/gim,"");
+    return str.trim();
+}
+
 function parseinput(inputData) {
+	inputData = sanitizeString(inputData);
 	var strarr = inputData.split('\n')
 	var arraylen = strarr.length;
 	var output = "";
@@ -17,7 +28,6 @@ function nl2br (str) {
 }
 
 function formatline(str) {
-	//alert(str.substr(0,2));
 	var isbody = false;
 	if (str.substr(0,2) == '--'){
 		str = formatheader(str);
@@ -30,12 +40,13 @@ function formatline(str) {
 }
 
 function formatheader(str) {
-	str = "<div class='heading'>" + str + "</div>"
+	str = "<div class='heading'>" + str.substring(2) + "</div>"
 	return str;
 }
 
 function formatpowerheader(str) {
-	str = "<div class='ability-heading'><span class='powerfonts'>&nbsp;" + str.substr(0,2) + "</span>"+ str.substr(2) +"</div>";
+	var str2 = (str.substring(0,1) == "_" ? "  " : str.substr(0,2));
+	str = "<div class='ability-heading'><span class='powerfonts'>&nbsp;" + str2 + "</span>"+ str.substr(2) +"</div>";
 	str = formatpowerkeywords(str);
 	return str;
 }
@@ -61,31 +72,30 @@ function replaceasterisk(str) {
 	return str.replace(/(\*)/g,"&bull;");
 }
 
-
-
-
-//old code.
-function parseText(inputData) {
-	// Succeptable to HTML injection... Sanitize input first in actual code...
-	// This is just a quick and dirty hack of a implementation. 
-
-	//B character bolding
-	var str = inputData.replace(/(\n|^)B (.+?)\n/ig, "$1<b>$2</b>\n");
-	
-	//Inline Bolding
-	str = str.replace(/\*(.*)\*/ig, "<b>$1</b>");
-	
-	//Replace 'm|M|r|R ' with power fonts
-	str = str.replace(/(\n|^)(_|m|r|a|c|d )(.+?)\n/ig, "$1<div class='ability-heading'><span class='powerfonts'>$2</span>$3</div>");
-
-	//Replace '--' with section headers
-	str = str.replace(/(\n|^)--(.+?)\n/ig, "$1<div class='heading'>$2</div>");
-
-	//Bold ':' Sections
-	str = str.replace(/(\w*:)/igm, "<b>$1</b>");
-
-	// Replace linebreaks with <br />
-	str = str.replace(/\n/ig, "<br />");
-	return str;
+function processData(obj){
+	var c = obj.Creature;
+	$('#1 .name').text(c.Name);
+	$('#1 .leveltype').text("Level " + c.Level + " " + c.Role);
+	$('#1 .keywords').text(c.Size + " " + c.Origin + " " + c.Keywords);
+	$('#1 .xp').text("XP " + c.XP);
+	$('#1 .hp').html("<b>HP</b> " + c.HP + " <b>Bloodied</b> " + Math.floor(c.HP/2));
+	$('#1 .defences').html("<b>AC</b> " + c.AC + "; <b>Fort</b> " + c.Fort + "; <b>Ref</b> " + c.Ref + "; <b>Will</b> " + c.Will);
+	$('#1 .speed').html("<b>Speed:</b> " + c.Speed);
+	$('#1 .init').html("<b>Initiative:</b> +" + c.Initiative);
+	$('#1 .perception').html("<b>Perception:</b> +" + c.Perception);
+	$('#1 .senses').text(c.Senses);
+	//$('#1 .powers').text(c.Powers);
+	$('#1 .skills').html(c.Skills != "" ? "<b>Skills:</b> "+ c.Skills : "");
+	$('#1 .str').html("<b>Str</b> " + c.Str);
+	$('#1 .dex').html("<b>Dex</b> " + c.Dex);
+	$('#1 .con').html("<b>Con</b> " + c.Con);
+	$('#1 .int').html("<b>Int</b> " + c.Int);
+	$('#1 .wis').html("<b>Wis</b> " + c.Wis);
+	$('#1 .cha').html("<b>Cha</b> " + c.Cha);
+	$('#1 .alignment').html("<b>Alignment:</b> " + c.Alignment);
+	$('#1 .languages').html("<b>Languages:</b> " + c.Languages);
+	$('#1 .equipment').html(c.Equipment != "" ? "<b>Equipment:</b> " + c.Equipment : "");
+	$('#1 .description').text(c.Description);
 }
+
 

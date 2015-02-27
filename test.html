@@ -4,21 +4,27 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<meta charset="UTF-8">
 	<title>Title of the document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src='code.js'></script>
 	<script type='text/javascript'>
-	window.onload=function() {
-		var inputBox = document.getElementById("text");
-		var output = document.getElementById("output");
-
-		output.innerHTML = parseinput(inputBox.value);
-
-		inputBox.onchange = function () {
+		window.onload=function() {
+			var inputBox = document.getElementById("text");
+			var output = document.getElementById("powers");
+			
 			output.innerHTML = parseinput(inputBox.value);
-		};
 
-		inputBox.onkeyup = function () {
-			output.innerHTML = parseinput(inputBox.value);
-		};
+			inputBox.onchange = function () {
+				output.innerHTML = parseinput(inputBox.value);
+			};
+
+			inputBox.onkeyup = function () {
+				output.innerHTML = parseinput(inputBox.value);
+			};
+			
+			
+			$.getJSON("./data.json", function(json) {
+				processData(json);
+			});
 	}
 	</script>
 </head>
@@ -28,7 +34,7 @@
 	<b>Input</b>
 
 	<hr width="100%">
-	<textarea rows="10" cols="80" id="text">
+	<textarea rows="10" cols="54" id="text">
 --Standard Actions
 m Default Attack (weapon) * At-Will
 Attack: Melee 1 (one creature); +? vs. AC
@@ -37,20 +43,52 @@ Hit: 1d6 + ? damage.
 Begin your powers with a "type code." Type codes are: 
 M, R, A, C, m, r, and _
 In the example above, the type code is "m".
+Use -- to begin action groups
 	</textarea>
 	<br />
 	<b>Output</b> 
 	<hr width="100%">
 
-	<div class='entity creature'>
-<!-- 		<div class='topinfo'>
-			<div class='name'>something</div>
-			<div class='leveltype'>Level 8 Controller</div>
-			<div class='keywords'>Large Natural Beastmode</div>
-			<div class='xp'>1000xp</div>
-		</div> -->
-		<div id="output"></div>
-
+	<div class='entity creature' id='1'>
+ 		<div class='topinfo'>
+			<div class='name'></div>
+			<div class='leveltype rightText'></div>
+			<div class='keywords'></div>
+			<div class='xp rightText'></div>
+		</div>
+		<div class='stats'>
+			<div class='leftStats'>
+				<div class='hp'></div>
+				<div class='defences'></div>
+				<div class='speed'></div>
+			</div>
+			<div class='rightStats'>
+				<div class='init'></div>
+				<div class='perception'></div>
+				<div class='senses'></div>
+			</div>
+			<div>
+				<div class='features'></div>
+			</div>
+		</div>
+		<div id="powers"></div>
+		<div class='SkillsAttrs'>
+			<div class='skills'></div>
+			<div class='Attributes'>
+				<div class='str'>Str</div>
+				<div class='dex'>Dex</div>
+				<div class='wis'>Wis</div>
+				<div class='con'>Con</div>
+				<div class='int'>Int</div>
+				<div class='cha'>Cha</div>
+			</div>
+		</div>
+		<div class='AlignEquipLanguage'>
+			<div class='alignment halfSize'></div>
+			<div class='languages halfSize'></div>
+			<div class='equipment'></div>
+			<div class='description'></div>
+		</div>
 	</div>
 
 
