@@ -1,3 +1,19 @@
+@font-face {
+	font-family: game_icons;
+	src: url('GameIcons.otf');
+}
+
+body {
+    font-family: Arial;
+}
+
+#input {
+	width: 400px;
+	height: 200px;
+	display: block;
+}
+
+/*PowerCard Styles*/
 .powers-header {
 	
 }
@@ -35,13 +51,82 @@
 	font-weight: normal;
 }
 
-@font-face {
-	font-family: game_icons;
-	src: url('GameIcons.otf');
+.SkillsAttrs{
+	background-color: tan;
+    color: black;
+	padding-top: 4px;
+	padding-left: 2px;
+	font-size: .8em;
 }
 
-body {
-    font-family: Arial;
+.halfSize{
+	display: inline-block;
+	width: 49%;
+}
+
+.creature .name {
+	float: left;
+	width: 220px;
+	
+}
+
+.creature .leveltype {
+	float: right;
+	width: 160px;
+}
+
+.creature .keywords {
+	float: left;
+	width: 200px;
+	font-size: .9em;
+}
+
+.creature .xp {
+	float: right;
+	width: 180px;
+	font-size: .9em;
+}
+
+.AlignEquipLanguage {
+	background-color: #E4D2BA;
+	padding-top: 4px;
+	padding-left: 2px;
+	font-size: .8em;
+}
+
+.stats{
+	padding-top:4px;
+	padding-left: 2px;
+	font-size: .8em;
+}
+
+.Attributes div{
+	width: 30%;
+	display: inline-block;
+	padding-top: 4px;
+	padding-left: 2px;
+}
+
+.equipment{
+	margin-top: 4px;
+	margin-right: 2px;
+}
+
+.description{
+	margin-top: 4px;
+	margin-right: 2px;
+	font-style: italic;
+}
+
+.leftStats{
+	width: 49%;
+	display: inline-block;
+}
+
+.rightStats{
+	width: 49%;
+	display: inline-block;
+	text-align: right;
 }
 
 .entity {
@@ -70,88 +155,4 @@ body {
 
 .rightText{
 	text-align: right;
-}
-
-.creature .name {
-	float: left;
-	width: 220px;
-	
-}
-
-.creature .leveltype {
-	float: right;
-	width: 160px;
-}
-
-.creature .keywords {
-	float: left;
-	width: 200px;
-	font-size: .9em;
-}
-
-.creature .xp {
-	float: right;
-	width: 180px;
-	font-size: .9em;
-}
-
-#input {
-	width: 400px;
-	height: 200px;
-	display: block;
-}
-
-.stats{
-	padding-top:4px;
-	padding-left: 2px;
-	font-size: .8em;
-}
-
-.leftStats{
-	width: 49%;
-	display: inline-block;
-}
-
-.rightStats{
-	width: 49%;
-	display: inline-block;
-	text-align: right;
-}
-
-
-.SkillsAttrs{
-	background-color: tan;
-    color: black;
-	padding-top: 4px;
-	padding-left: 2px;
-	font-size: .8em;
-}
-
-.equipment{
-	margin-top: 4px;
-	margin-right: 2px;
-}
-
-.Attributes div{
-	width: 30%;
-	display: inline-block;
-	padding-top: 4px;
-	padding-left: 2px;
-}
-
-.AlignEquipLanguage {
-	background-color: #E4D2BA;
-	padding-top: 4px;
-	padding-left: 2px;
-	font-size: .8em;
-}
-
-.halfSize{
-	display: inline-block;
-	width: 49%;
-}
-
-.description{
-	margin-top: 4px;
-	margin-right: 2px;
 }

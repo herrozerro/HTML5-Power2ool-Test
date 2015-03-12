@@ -6,27 +6,6 @@
 	<title>Title of the document</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src='code.js'></script>
-	<script type='text/javascript'>
-		window.onload=function() {
-			var inputBox = document.getElementById("text");
-			var output = document.getElementById("powers");
-			
-			output.innerHTML = parseinput(inputBox.value);
-
-			inputBox.onchange = function () {
-				output.innerHTML = parseinput(inputBox.value);
-			};
-
-			inputBox.onkeyup = function () {
-				output.innerHTML = parseinput(inputBox.value);
-			};
-			
-			
-			$.getJSON("./data.json", function(json) {
-				processData(json);
-			});
-	}
-	</script>
 </head>
 
 <body>

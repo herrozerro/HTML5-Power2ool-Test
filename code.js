@@ -1,5 +1,24 @@
 
+window.onload=function() {
+			var inputBox = document.getElementById("text");
+			var output = document.getElementById("powers");
+			
+			output.innerHTML = parseinput(inputBox.value);
 
+			inputBox.onchange = function () {
+				output.innerHTML = parseinput(inputBox.value);
+			};
+
+			inputBox.onkeyup = function () {
+				output.innerHTML = parseinput(inputBox.value);
+			};
+			
+			
+			//$.getJSON("./data.json", function(json) {
+			//	processData(json);
+			//});
+			processData();
+	}
 
 
 //Sanitize Input
@@ -72,8 +91,45 @@ function replaceasterisk(str) {
 	return str.replace(/(\*)/g,"&bull;");
 }
 
-function processData(obj){
-	var c = obj.Creature;
+var x = {
+	"Creature": {
+		"id":1,
+		"Pos-x":1,
+		"Pos-y":1,
+		"Name": "Awesome Monster",
+		"Level": 1,
+		"Role": "Controller",
+		"Size": "Large",
+		"Origin": "Natural",
+		"Keywords": "Beastmode",
+		"XP": 10,
+		"HP": 10,
+		"AC": 10,
+		"Fort": 10,
+		"Ref": 10,
+		"Will": 10,
+		"Speed": "6",
+		"Initiative": 10,
+		"Perception": 10,
+		"Senses": "Blindsight",
+		"Features": "Regeneration: 5",
+		"Powers": "",
+		"Skills": "",
+		"Str": 10,
+		"Con": 10,
+		"Dex": 10,
+		"Int": 10,
+		"Wis": 10,
+		"Cha": 10,
+		"Alignment": "Unaligned",
+		"Languages": "Elven",
+		"Equipment": "Sword-Chuck",
+		"Description": "A Bas-Ass Monster"
+	}
+}
+
+function processData(){
+	var c = x.Creature;
 	$('#1 .name').text(c.Name);
 	$('#1 .leveltype').text("Level " + c.Level + " " + c.Role);
 	$('#1 .keywords').text(c.Size + " " + c.Origin + " " + c.Keywords);
